@@ -1,0 +1,61 @@
+# ─── LILY Personal Docs — Never Push These ───────────────────────────────────
+project_context.md
+tech_stack.md
+Call-To-Action-Plan.md
+
+# ─── Vault Identity Files — Your Soul, Stay Local ────────────────────────────
+.vault/agent-profile/my_profile.md
+.vault/agent-profile/my_rules.md
+.vault/agent-profile/my_feedback.md
+
+# ─── Environment & Secrets ───────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── LILY Brain — Local Vector DB & Model Adapters ───────────────────────────
+.lily_brain/
+*.lily_index/
+my_lora_adapter/
+
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# ─── Obsidian ────────────────────────────────────────────────────────────────
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+
+# ─── Audio / Voice Data ──────────────────────────────────────────────────────
+*.wav
+*.mp3
+*.ogg
+*.m4a
+voice-notes/
+
+# ─── Logs & Autoresearch Reports ─────────────────────────────────────────────
+*.log
+autoresearch_logs/
+autoresearch/experiments/
+
+# ─── OS Noise ────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── n8n ─────────────────────────────────────────────────────────────────────
+.n8n/
+n8n_workflows/*.json
+
+# ─── IDE ─────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp

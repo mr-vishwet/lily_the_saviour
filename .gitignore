@@ -1,4 +1,11 @@
 # ─── LILY Personal Docs — Never Push These ───────────────────────────────────
+# Local-only working area: agentic MDs, exact roadmaps, architecture decisions.
+# Loose root-level docs from the early plan are still ignored for safety.
+.docs/
+# .tmp/ is the scratch area: recon dumps (vault paths, binary hashes), sweep stderr,
+# per-run AFM logs. Ignored for the same reason .docs/ is -- it describes this person's
+# vault, and a `git add -A` after a long experiment day must not notice.
+.tmp/
 project_context.md
 tech_stack.md
 Call-To-Action-Plan.md
@@ -9,9 +16,33 @@ Call-To-Action-Plan.md
 .vault/agent-profile/my_feedback.md
 
 # ─── Environment & Secrets ───────────────────────────────────────────────────
+# .envs/ = local env files + templates. Named `.envs` (not `.env`) so the root
+#          `.env` *file* convention stays available for dotenv loaders.
+# .keys/ = API keys, tokens, credentials. chmod 700. Never pushed, never logged.
+# Root .env / .env.* stay ignored as well, for any tool that hard-codes that path.
+.envs/
+.keys/
 .env
 .env.*
 !.env.example
+
+# ─── Belt & Braces: secret material wherever it appears ──────────────────────
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+.netrc
+credentials.json
+service-account*.json
+*_token
+*_key
+*_api_key*
+*_secret*
+id_rsa*
+id_ed25519*
+secrets.yaml
+secrets.toml
 
 # ─── LILY Brain — Local Vector DB & Model Adapters ───────────────────────────
 .lily_brain/
@@ -45,6 +76,18 @@ voice-notes/
 *.log
 autoresearch_logs/
 autoresearch/experiments/
+
+# The experiment loop writes its history into the project dir. Those artefacts quote note
+# titles and retrieved snippets from the vault, so in a repo that gets pushed they are a
+# vault leak by another name. Ignored unconditionally.
+results.tsv
+best_config.json
+autoresearch/
+autoresearch/reviews/
+.lily-research/
+*.chunks.json
+evals/*.jsonl
+!evals/eval-set.example.jsonl
 
 # ─── OS Noise ────────────────────────────────────────────────────────────────
 .DS_Store

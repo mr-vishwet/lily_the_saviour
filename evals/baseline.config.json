@@ -1,0 +1,14 @@
+{
+  "chunk_words": 128,
+  "chunk_overlap": 0,
+  "k1": 1.5,
+  "b": 0.75,
+  "title_boost": 2.0,
+  "path_boost": 4.0,
+  "tag_boost": 1.5,
+  "freshness_weight": 0.0,
+  "half_life_days": 90.0,
+  "fold_devanagari": false,
+  "strip_stopwords": false,
+  "top_k": 10
+}
